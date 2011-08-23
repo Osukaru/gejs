@@ -1,5 +1,7 @@
-function FiguraGeometrica() {
-	var posicion, dimensiones;
+function FiguraGeometrica(posicion, dimensiones) {
+	console.log("FiguraGeometrica");
+	this.posicion = posicion;
+	this.dimensiones = dimensiones;
 }
 
 FiguraGeometrica.prototype.calculaArea = function() {
@@ -11,11 +13,11 @@ FiguraGeometrica.prototype.calculaPerimetro = function() {
 };
 
 FiguraGeometrica.prototype.getPosicion = function() {
-	return posicion;
+	return this.posicion;
 };
 
 FiguraGeometrica.prototype.getDimensiones = function() {
-	return dimensiones;
+	return this.dimensiones;
 };
 
 FiguraGeometrica.prototype.describe = function() {

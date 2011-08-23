@@ -2,7 +2,7 @@ describe("FiguraGeometrica", function() {
   	var figuraGeometrica;
 
   	beforeEach(function() {
-    	figuraGeometrica = new FiguraGeometrica();
+    	figuraGeometrica = new FiguraGeometrica([0,0], [0,0]);
   	});
 
   	it("tiene definido un metodo para calcular el area", function() {
