@@ -37,8 +37,8 @@ describe("Circulo", function() {
 				expect(circulo.getPosicion()).toEqual([0,0]);
 			});
 
-			it("...las dimensiones son (1, 1)", function() {
-				expect(circulo.getDimensiones()).toEqual([1,1]);
+			it("...las dimensiones son (2, 2)", function() {
+				expect(circulo.getDimensiones()).toEqual([2,2]);
 			});
 			
 			it("...el area es Pi", function() {
@@ -48,7 +48,27 @@ describe("Circulo", function() {
 			it("...el perimetro es 2Pi", function() {
 				expect(circulo.calculaPerimetro()).toEqual(2*Math.PI);
 			});
+		});
+		describe("Si el centro es (1,1) y el radio es 2...", function() {
+  			beforeEach(function() {
+    			circulo = new Circulo([1,1], 2);
+  			});
+
+			it("...la posicion es (-1,-1)", function() {	
+				expect(circulo.getPosicion()).toEqual([-1,-1]);
+			});
+
+			it("...las dimensiones son (4, 4)", function() {
+				expect(circulo.getDimensiones()).toEqual([4,4]);
+			});
 			
+			it("...el area es 4Pi", function() {
+				expect(circulo.calculaArea()).toEqual(4*Math.PI);
+			});
+			
+			it("...el perimetro es 4Pi", function() {
+				expect(circulo.calculaPerimetro()).toEqual(4*Math.PI);
+			});
 		});
 	});
 });
