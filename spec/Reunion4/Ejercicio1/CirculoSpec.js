@@ -2,7 +2,7 @@ describe("Circulo", function() {
   	var circulo;
 
   	beforeEach(function() {
-    	circulo = new Circulo([1,1], 1);
+    	circulo = new Circulo([0,0], 0);
   	});
 
   	describe("Un Circulo es una FiguraGeometrica puesto que...", function() {
@@ -29,9 +29,26 @@ describe("Circulo", function() {
 
 	describe("Un circulo se define con un centro y un radio", function() {
 		describe("Si el centro es (1,1) y el radio es 1...", function() {
+  			beforeEach(function() {
+    			circulo = new Circulo([1,1], 1);
+  			});
+
 			it("...la posicion es (0,0)", function() {	
 				expect(circulo.getPosicion()).toEqual([0,0]);
 			});
+
+			it("...las dimensiones son (1, 1)", function() {
+				expect(circulo.getDimensiones()).toEqual([1,1]);
+			});
+			
+			it("...el area es Pi", function() {
+				expect(circulo.calculaArea()).toEqual(Math.PI);
+			});
+			
+			it("...el perimetro es 2Pi", function() {
+				expect(circulo.calculaPerimetro()).toEqual(2*Math.PI);
+			});
+			
 		});
 	});
 });
